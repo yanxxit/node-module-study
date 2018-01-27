@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>HTML5 手机摇一摇 </title>
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.2.1/css/amazeui.min.css">
+    <link rel="stylesheet" href="css/shake.css">
+    </head>
+<body>
+    <h1>HTML5 手机摇一摇 </h1>
+    <a id="btnShake" href='javascript:;'>手动摇一摇</a>
+
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.2.1/js/amazeui.min.js"></script>
+<script src="js/lib/shake.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var myShakeEvent = new Shake({
+        threshold: 15, // optional shake strength threshold
+        timeout: 1000 // optional, determines the frequency of event generation
+    });
+
+    myShakeEvent.start();//启动
+
+    window.removeEventListener('shake', shakeEventDidOccur, false);
+
+    function shakeEventDidOccur() {
+        alert('shake!');
+    }
+    $('#btnShake').click(function() {
+        shakeEventDidOccur();
+    });
+
+</script>
+</body>
+</html>
