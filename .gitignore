@@ -9,3 +9,7 @@ insert.zip
 
 nodeppt/output
 .vscode
+
+.cache
+tool/Parcel/dist
+_book
