@@ -12,4 +12,7 @@ nodeppt/output
 
 .cache
 tool/Parcel/dist
+tool/cize/data/
+tool/cize/works
+
 _book
