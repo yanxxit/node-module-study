@@ -14,6 +14,12 @@ parcel index.html
 parcel build index.html
 
 ```
+* -o 在默认浏览器中打开
+* -p 3030 设置启动端口
+* public-url
+
+## npm init -y 初始化 package.json
+
 ## 简单实用
 
 1. js 
@@ -23,3 +29,6 @@ parcel build index.html
 
 ## 参考
 - [Parcel 官网](https://parceljs.org/)
+
+http://www.jb51.net/article/131381.htm
+https://github.com/zlxbuzz/parcel-demo
