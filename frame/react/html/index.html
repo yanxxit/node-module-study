@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>react.js demo</title>
+    <link href="https://cdn.bootcss.com/antd-mobile/2.1.6/antd-mobile.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/react/16.4.0-alpha.0911da3/umd/react.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0-alpha.0911da3/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+    <script src="https://cdn.bootcss.com/antd-mobile/2.1.6/antd-mobile.min.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- This div's content will be managed by React. -->
+    </div>
+</body>
+
+<script type="text/babel">
+var p = console;
+
+//组件
+class HelloMessage extends React.Component {
+  componentDidMount() {
+    p.log('组件被渲染到页面之后')
+    p.log("111111", this.state)
+  }
+
+  render() {
+    const data = [
+      { value: 0, label: 'Ph.D.' },
+      { value: 1, label: 'Bachelor' },
+      { value: 2, label: 'College diploma' },
+    ]
+    return (
+      <div>
+        <h1 class>Index Page</h1>
+      </div>
+    );
+  }
+}
+
+    // ReactDOM.render(
+    //     <h1>Hello, world!</h1>,
+    //     document.getElementById('root')
+    // );
+    ReactDOM.render(
+        <HelloMessage/>,
+        document.getElementById('root')
+    );
+</script>
+
+</html>
