@@ -7,7 +7,8 @@ var checkList = [
 ];
 
 //打开连接
-page.open("http://m.sh.189.cn/html/more/index1.html", function (status) {
+page.open("http://www.shgjj.com/static/2010/yd.html", function (status) {
+    console.log(status)
     if (status === "success") {
         console.log(page.title);//获取标题
         // console.log(page.content);//页面内容
