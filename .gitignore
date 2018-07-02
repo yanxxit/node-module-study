@@ -16,3 +16,6 @@ tool/cize/data/
 tool/cize/works
 
 _book
+
+*.gz
+*.zip
