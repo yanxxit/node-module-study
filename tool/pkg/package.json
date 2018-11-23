@@ -1,5 +1,19 @@
 {
+  "name": "pkg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "./bin/www.js",
   "dependencies": {
+    "_moment@2.22.2@moment": "^2.22.2",
     "moment": "^2.22.2"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "pkg": "pkg . --out-path=dist/"
+  },
+  "pkg": {
+  },
+  "author": "",
+  "license": "ISC"
 }
