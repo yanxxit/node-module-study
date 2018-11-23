@@ -19,3 +19,10 @@ _book
 
 *.gz
 *.zip
+*.xlsx
+office/excel/xls-to-json/*.json
+office/excel/*
+
+*-win.exe
+*-linux
+*-macos

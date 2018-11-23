@@ -1,0 +1,68 @@
+image: node:latest
+
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_DEPLOY_KEY")
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\\n\\tStrictHostKeyChecking no\\n\\n" > ~/.ssh/config'
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - test
+  - deploy
+
+npm_install:
+  stage: build
+  script:
+    - npm i --registry=https://registry.npm.taobao.org
+
+deploy_dev:
+  stage: deploy
+  script:
+    - ssh root@172.16.1.102 "mkdir -p /mnt/data/tingo/api"
+    - scp -r ./* root@172.16.1.102:/mnt/data/tingo/api
+    - ssh root@172.16.1.102 "cd /mnt/data/tingo/api && gulp"
+    - ssh root@172.16.1.102 "cd /mnt/data/tingo/api && pm2 startOrRestart ecosystem.dev.json"
+  only:
+    - develop
+  tags:
+    - node
+
+deploy_test:
+  stage: deploy
+  script:
+    - ssh root@172.16.3.101 "mkdir -p /mnt/data/tingo/api"
+    - scp -r ./* root@172.16.3.101:/mnt/data/tingo/api
+    - ssh root@172.16.3.101 "cd /mnt/data/tingo/api && gulp"
+    - ssh root@172.16.3.101 "cd /mnt/data/tingo/api && pm2 startOrRestart ecosystem.test.json"
+  only:
+    - /release\/*/
+  tags:
+    - node
+
+deploy_prod_01:
+  stage: deploy
+  script:
+    - ssh root@172.16.2.101 "mkdir -p /data/publish/tingo.api"
+    - scp -r ./* root@172.16.2.101:/data/publish/tingo.api
+    - ssh root@172.16.2.101 "sh ~/tingo-api-publish.sh"
+  only:
+    - master
+  tags:
+    - node
+
+deploy_prod_02:
+  stage: deploy
+  script:
+    - ssh root@172.16.2.102 "mkdir -p /data/publish/tingo.api"
+    - scp -r ./* root@172.16.2.102:/data/publish/tingo.api
+    - ssh root@172.16.2.102 "sh ~/tingo-api-publish.sh"
+  only:
+    - master
+  tags:
+    - node
