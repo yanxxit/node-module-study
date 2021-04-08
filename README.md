@@ -1,6 +1,11 @@
 # node-module-study
 常用node.js 模块学习及使用
 
+## 使用gitpod.io进行编辑
+- 使用github1s.com 快速打开查看
+- 使用gitpod.io 编辑
+- 命令行可用
+
 ## 简介
 > 记录一些有趣的模块，拓展思路，开阔视野。
 
