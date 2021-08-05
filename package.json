@@ -20,6 +20,7 @@
     "breakdance": "^0.1.6",
     "cheerio": "^0.22.0",
     "co": "^4.6.0",
+    "colors": "^1.4.0",
     "eventproxy": "^1.0.0",
     "excel-export": "^0.5.1",
     "excel4node": "^1.5.1",
