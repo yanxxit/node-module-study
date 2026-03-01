@@ -1,0 +1,6 @@
+ignoredBuiltDependencies:
+  - images
+  - node-sass
+
+onlyBuiltDependencies:
+  - core-js

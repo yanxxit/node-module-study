@@ -24,6 +24,7 @@
     "eventproxy": "^1.0.0",
     "excel-export": "^0.5.1",
     "excel4node": "^1.5.1",
+    "exceljs": "^4.4.0",
     "express": "^4.14.0",
     "extend": "^3.0.0",
     "guid": "^0.0.12",
@@ -47,7 +48,7 @@
     "react": "^15.4.2",
     "redis": "^2.8.0",
     "remarkable": "^1.7.1",
-    "request": "^2.79.0",
+    "request": "^2.88.2",
     "shortid": "^2.2.15",
     "should": "^13.2.1",
     "signale": "^1.4.0",
@@ -55,8 +56,8 @@
     "webpage": "^0.3.0",
     "wechat": "^2.0.3",
     "xls-to-json": "^0.4.0",
-    "xlsx": "^0.11.1",
-    "xml2js": "^0.4.17"
+    "xlsx": "^0.18.5",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
