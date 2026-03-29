@@ -46,7 +46,7 @@
     "openid": "^2.0.6",
     "qrcode": "^0.9.0",
     "react": "^15.4.2",
-    "redis": "^2.8.0",
+    "redis": "^3.1.1",
     "remarkable": "^1.7.1",
     "request": "^2.88.2",
     "shortid": "^2.2.15",
